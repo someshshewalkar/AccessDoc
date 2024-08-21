@@ -4,7 +4,6 @@ const jwt = require("jsonwebtoken")
 const path = require("path")
 const cookieParser = require('cookie-parser'); // Correct import
 const userModel = require("./model/user")
-const postModel = require("./model/post")
 const bcrypt = require('bcrypt')
 app.set("view engine","ejs")
 app.use(express.json())
@@ -15,6 +14,10 @@ app.use(cookieParser()); // Use cookie-parser middleware
 
 app.get("/",(req,res)=>{ 
     res.render("index")
+})
+
+app.get("/register",(req, res)=>{
+    res.render("register")
 })
 
 
